@@ -1,10 +1,15 @@
 version: 0.0
 os: linux
+# copy all files from CodeCommit to app directory
 files:
   - source: /
     destination: /home/ec2-user/app
 hooks:
-  BeforeInstall:
+  ApplicationStop:
+    - location: scripts/app_stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
     - location: scripts/app_install.sh
       timeout: 300
       runas: root
