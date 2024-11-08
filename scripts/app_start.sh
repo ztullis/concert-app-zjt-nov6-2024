@@ -1,5 +1,7 @@
 #!/bin/bash
-cd /home/ec2-user/app
+cd /home/ec2-user/concert-app-zjt-nov6-2024
 export NVM_DIR="/home/ec2-user/.nvm" 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-pm2 start index.js
+
+# Start the app using pm2 and specify the correct app file
+pm2 start concert-app-zjt-nov6-2024.js
